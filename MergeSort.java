@@ -9,10 +9,14 @@ class MergeSort {
 	public static void main(String[] args) {
 		int[] test = {3, 4, 7, 8, 1, 2, 6, 5};
 		MergeSort.mergesort(test, 0, 7);
-
 	}
 
-
+	/**
+	 *	recursively sorts the left/low and right/high subarrays and merges them
+	 *	@param	int array
+	 *	@param	index of the left most element of the subarray
+	 *	@param	index of the right most element of the subarray
+	 */
 	public static void mergesort(int[] array, int low, int high) {
 		if (low < high) {
 			int mid = (low + high) / 2;
@@ -22,6 +26,13 @@ class MergeSort {
 		}
 	}
 
+	/**
+	 *	merges 2 subarrays and copies the merged sorted elements back into array
+	 *	@param	int array to be mergeed
+	 *	@param	index of the left most element of the subarray
+	 *	@param	index of the middle element of the subarray
+	 *	@param	index of the right most element of the subarray
+	 */
 	public static void merge(int[] array, int low, int mid, int high) {
 		int[] helper = new int[array.length];
 
@@ -53,6 +64,10 @@ class MergeSort {
 		MergeSort.printarray(array);
 	}
 
+	/**
+	 *	prints out an int array as a string
+	 *	@param	int array to be printed
+	 */
 	public static void printarray(int[] array) {
 		String str = "{ ";
 		for (int i=0; i<array.length; i++) {
